@@ -1407,6 +1407,11 @@ async def test_update_panel(
     assert msg["result"]["light"]["icon"] == "mdi:lamps"
     assert msg["result"]["light"]["title"] == "light"
     assert msg["result"]["light"]["require_admin"] is False
+    assert msg["result"]["air-quality"]["component_name"] == "air_quality"
+    assert msg["result"]["air-quality"]["icon"] == "mdi:air-filter"
+    assert msg["result"]["air-quality"]["title"] == "air_quality"
+    assert msg["result"]["air-quality"]["url_path"] == "air-quality"
+    assert msg["result"]["air-quality"]["show_in_sidebar"] is False
 
     # Update the light panel
     events = async_capture_events(hass, EVENT_PANELS_UPDATED)
