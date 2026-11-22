@@ -503,6 +503,14 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
     )
     async_register_built_in_panel(
         hass,
+        "air_quality",
+        sidebar_icon="mdi:air-filter",
+        sidebar_title="air_quality",
+        show_in_sidebar=False,
+        frontend_url_path="air-quality",
+    )
+    async_register_built_in_panel(
+        hass,
         "home",
         sidebar_icon="mdi:home",
         sidebar_title="home",
